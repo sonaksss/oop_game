@@ -1,0 +1,28 @@
+#pragma once
+#include <cstdlib>
+
+class Position {
+private:
+    int x_;
+    int y_;
+
+public:
+    Position(int x, int y);
+    Position();
+
+    int X() const;
+    int Y() const;
+
+    void SetPosition(int x, int y);
+    void SetPosition(Position other);
+
+    int ManhattanDistance(Position other) const;
+
+    Position Up() const;
+    Position Down() const;
+    Position Left() const;
+    Position Right() const;
+
+    bool operator==(const Position& other) const;
+    bool operator!=(const Position& other) const;
+};
