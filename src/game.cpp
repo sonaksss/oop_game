@@ -1,18 +1,10 @@
 #include "game.h"
 #include <algorithm>
 #include <cstdlib>
-#include <iostream>
 
-Game::Game(Field field, PlayerRobot player,
-           std::vector<EnemyRobot> enemies,
-           std::vector<RobotsFactory> factories,
-           Input input, Renderer renderer)
-    : field_(std::move(field)),
-      player_(std::move(player)),
-      enemies_(std::move(enemies)),
-      factories_(std::move(factories)),
-      input_(input),
-      renderer_(renderer) {}
+Game::Game(Level level, Input input, Renderer renderer): field_(level.TakeField()),
+      player_(level.TakePlayer()), enemies_(level.TakeEnemies()),
+      factories_(level.TakeFactories()), input_(input), renderer_(renderer) {}
 
 bool Game::AreEnemiesAlive() const {
     for (const EnemyRobot& e : enemies_)
@@ -164,22 +156,43 @@ void Game::TickFactories() {
 
         Position top_left = f.GetTopLeft();
         bool spawned = false;
-
         for (const Position& d : kNeighbours) {
             for (int dy = 0; dy < f.GetAreaHeight() && !spawned; ++dy) {
                 for (int dx = 0; dx < f.GetAreaWidth() && !spawned; ++dx) {
-                    Position candidate{top_left.X() + dx + d.X(),
-                                       top_left.Y() + dy + d.Y()};
+                    Position candidate{top_left.X() + dx + d.X(), top_left.Y() + dy + d.Y()};
 
                     if (!field_.IsAvailableCell(candidate)) continue;
                     if (FindRobotAt(candidate, nullptr)) continue;
 
-                    enemies_.push_back(
-                        EnemyRobot(30, 3, 0, 10, 3, candidate));
+                    enemies_.push_back(f.Spawn(candidate));
                     spawned = true;
                 }
             }
             if (spawned) break;
+        }
+    }
+}
+
+void Game::SpawnInitialEnemies() {
+    const Position kNeighbours[8] = { {-1,-1}, {0,-1}, {1,-1}, {-1, 0}, {1, 0}, {-1, 1}, {0, 1}, {1, 1}};
+
+    for (RobotsFactory& f : factories_) {
+        int spawned = 0;
+
+        for (const Position& d : kNeighbours) {
+            if (spawned >= kInitialEnemiesPerFactory) break;
+            for (int dy = 0; dy < f.GetAreaHeight() && spawned < kInitialEnemiesPerFactory; ++dy) {
+                for (int dx = 0; dx < f.GetAreaWidth() && spawned < kInitialEnemiesPerFactory; ++dx) {
+                    Position candidate{f.GetTopLeft().X() + dx + d.X(),
+                                       f.GetTopLeft().Y() + dy + d.Y()};
+
+                    if (!field_.IsAvailableCell(candidate)) continue;
+                    if (FindRobotAt(candidate, nullptr)) continue;
+
+                    enemies_.push_back(f.Spawn(candidate));
+                    ++spawned;
+                }
+            }
         }
     }
 }
@@ -221,6 +234,9 @@ void Game::RemoveDeadEnemies() {
 }
 
 void Game::Run() {
+    input_.Reset();
+    UpdateVisibility();
+    SpawnInitialEnemies();
     UpdateVisibility();
 
     while (is_running_ && player_.IsAlive() && !IsVictory()) {
@@ -236,11 +252,10 @@ void Game::Run() {
         UpdateVisibility();
     }
 
-    if (!player_.IsAlive()) {
-        std::cout << "Поражение.\n";
-    } else if (IsVictory()) {
-        std::cout << "Победа!\n";
-    } else {
-        std::cout << "Выход из игры.\n";
-    }
+    if (!player_.IsAlive())
+        renderer_.DrawGameOver("Поражение.");
+    else if (IsVictory())
+        renderer_.DrawGameOver("Artem2007penis");
+    else
+        renderer_.DrawGameOver("Выход из игры.");
 }

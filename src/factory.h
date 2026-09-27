@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "enemy_robot.h"
 #include "position.h"
 
 class RobotsFactory {
@@ -31,4 +32,5 @@ public:
     void SetHealth(int value);
 
     bool Tick();
+    EnemyRobot Spawn(Position pos) const;
 };

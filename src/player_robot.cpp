@@ -1,10 +1,8 @@
 #include "player_robot.h"
 
-PlayerRobot::PlayerRobot(int max_health, int damage, int heal, int max_energy,
-                         int speed, Position position, int visibility)
-    : Robot(max_health, damage, heal, max_energy, speed, false, position),
-      experience_(0), experience_up_(kExperienceUpInitial),
-      rank_(1), visibility_(visibility) {
+PlayerRobot::PlayerRobot(int max_health, int damage, int heal, int max_energy, int speed, Position position, int visibility): 
+                         Robot(max_health, damage, heal, max_energy, speed, false, position), experience_(0), 
+                         experience_up_(kExperienceUpInitial), rank_(1), visibility_(visibility) {
     if (visibility < 0)
         throw std::invalid_argument("PlayerRobot: negative visibility");
 }

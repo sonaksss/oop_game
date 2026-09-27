@@ -8,7 +8,6 @@ private:
     bool is_available_;
     int passability_;
     bool is_known_;
-
 public:
     explicit Cell(bool is_available);
 

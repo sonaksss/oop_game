@@ -11,29 +11,8 @@ void Position::SetPosition(int x, int y) {
     y_ = y;
 }
 
-void Position::SetPosition(Position other) {
-    x_ = other.X();
-    y_ = other.Y();
-}
-
 int Position::ManhattanDistance(Position other) const {
     return std::abs(x_ - other.X()) + std::abs(y_ - other.Y());
-}
-
-Position Position::Up() const {
-    return Position(x_, y_ - 1);
-}
-
-Position Position::Down() const {
-    return Position(x_, y_ + 1);
-}
-
-Position Position::Left() const {
-    return Position(x_ - 1, y_);
-}
-
-Position Position::Right() const {
-    return Position(x_ + 1, y_);
 }
 
 bool Position::operator==(const Position& other) const {

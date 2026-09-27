@@ -8,4 +8,5 @@ private:
 public:
     Position ReadMove();
     bool WantsQuit() const { return time_out_; }
+    void Reset() { time_out_ = false; }
 };

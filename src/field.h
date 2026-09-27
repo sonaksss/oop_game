@@ -6,7 +6,7 @@
 class Field {
 private:
     static constexpr int kWidthMin = 5;
-    static constexpr int kWidthMax = 50;
+    static constexpr int kWidthMax = 100;
     static constexpr int kHeightMin = 5;
     static constexpr int kHeightMax = 50;
 
@@ -18,6 +18,11 @@ private:
 
 public:
     explicit Field(int width, int height);
+
+    static constexpr int MinWidth()  { return kWidthMin; }
+    static constexpr int MaxWidth()  { return kWidthMax; }
+    static constexpr int MinHeight() { return kHeightMin; }
+    static constexpr int MaxHeight() { return kHeightMax; }
 
     int GetWidth() const { return width_; }
     int GetHeight() const { return height_; }
@@ -36,4 +41,6 @@ public:
 
     void OccupyArea(Position top_left, int area_width, int area_height);
     bool CanPlaceArea(Position top_left, int area_width, int area_height) const;
+
+    void RemoveUnreachableCells(Position start, const std::vector<Position>& keep = {});
 };

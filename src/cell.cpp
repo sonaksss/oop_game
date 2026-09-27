@@ -1,9 +1,6 @@
 #include "cell.h"
 
-Cell::Cell(bool is_available)
-    : is_available_(is_available),
-      passability_(kPassabilityMin),
-      is_known_(false) {}
+Cell::Cell(bool is_available): is_available_(is_available), passability_(kPassabilityMin), is_known_(false) {}
 
 void Cell::SetPassability(int passability) {
     if (passability < kPassabilityMin) {

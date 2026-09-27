@@ -1,5 +1,6 @@
 #include "field.h"
 #include <cstdlib>
+#include <queue>
 #include <stdexcept>
 
 Field::Field(int width, int height) : width_(width), height_(height) {
@@ -32,6 +33,9 @@ bool Field::IsForbidden(Position p, const std::vector<Position>& forbidden) cons
 }
 
 void Field::GenerateObstacles(int count, const std::vector<Position>& forbidden) {
+    if (count < 0)
+        throw std::invalid_argument("Field: negative obstacles count");
+
     int placed = 0;
     int attempts = 0;
     const int kMaxAttempts = width_ * height_ * 10;
@@ -91,10 +95,44 @@ bool Field::CanPlaceArea(Position top_left, int area_width, int area_height) con
 }
 
 void Field::OccupyArea(Position top_left, int area_width, int area_height) {
-    for (int dy = 0; dy < area_height; ++dy) {
-        for (int dx = 0; dx < area_width; ++dx) {
-            Position p{top_left.X() + dx, top_left.Y() + dy};
-            SetCellAvailability(p, false);
+    if (!CanPlaceArea(top_left, area_width, area_height))
+        throw std::invalid_argument("Field: cannot occupy area");
+    for (int dy = 0; dy < area_height; ++dy)
+        for (int dx = 0; dx < area_width; ++dx)
+            SetCellAvailability({top_left.X() + dx, top_left.Y() + dy}, false);
+}
+
+void Field::RemoveUnreachableCells(Position start, const std::vector<Position>& keep) {
+    if (!IsCorrectCell(start) || !IsAvailableCell(start)) return;
+
+    std::vector<std::vector<bool>> visited(
+        height_, std::vector<bool>(width_, false));
+
+    std::queue<Position> q;
+    q.push(start);
+    visited[start.Y()][start.X()] = true;
+
+    const Position kDirs[4] = {{1,0}, {-1,0}, {0,1}, {0,-1}};
+
+    while (!q.empty()) {
+        Position cur = q.front(); q.pop();
+        for (const Position& d : kDirs) {
+            Position next{cur.X() + d.X(), cur.Y() + d.Y()};
+            if (!IsCorrectCell(next)) continue;
+            if (!IsAvailableCell(next)) continue;
+            if (visited[next.Y()][next.X()]) continue;
+            visited[next.Y()][next.X()] = true;
+            q.push(next);
+        }
+    }
+
+    for (int y = 0; y < height_; ++y) {
+        for (int x = 0; x < width_; ++x) {
+            Position p{x, y};
+            if (!IsAvailableCell(p)) continue;
+            if (visited[y][x]) continue;
+            if (IsForbidden(p, keep)) continue;
+            grid_[y][x].SetAvailable(false);
         }
     }
 }

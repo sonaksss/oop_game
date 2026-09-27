@@ -4,8 +4,6 @@
 
 class Robot {
 protected:
-    static constexpr int kHealAmount = 5;
-
     int health_;
     int health_max_;
     int damage_;
@@ -15,10 +13,8 @@ protected:
     int speed_;
     bool is_enemy_;
     Position position_;
-
 public:
-    Robot(int health_max, int damage, int heal, int energy_max,
-          int speed, bool is_enemy, Position position);
+    Robot(int health_max, int damage, int heal, int energy_max, int speed, bool is_enemy, Position position);
     virtual ~Robot() = default;
 
     int GetHealth() const { return health_; }

@@ -1,11 +1,9 @@
 #include "robot.h"
 
-Robot::Robot(int max_health, int damage, int heal, int max_energy,
-             int speed, bool is_enemy, Position position)
-    : health_(max_health), health_max_(max_health),
-      damage_(damage), heal_(heal),
-      energy_(max_energy), energy_max_(max_energy),
-      speed_(speed), is_enemy_(is_enemy), position_(position) {
+Robot::Robot(int max_health, int damage, int heal, int max_energy, int speed, bool is_enemy, Position position): 
+             health_(max_health), health_max_(max_health), damage_(damage), heal_(heal),
+             energy_(max_energy), energy_max_(max_energy), speed_(speed), is_enemy_(is_enemy), position_(position) {
+    
     if (max_health <= 0 || damage < 0 || heal < 0 ||
         max_energy < 0 || speed < 0)
         throw std::invalid_argument("Robot: invalid stats");

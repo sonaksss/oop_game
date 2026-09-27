@@ -38,3 +38,7 @@ bool RobotsFactory::Tick() {
     }
     return false;
 }
+
+EnemyRobot RobotsFactory::Spawn(Position pos) const {
+    return EnemyRobot(30, 3, 0, 10, 3, pos);
+}

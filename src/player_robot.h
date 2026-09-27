@@ -18,6 +18,10 @@ private:
     int visibility_;
 
     void LevelUp();
+    void SetExperience(int value);
+    void SetExperienceUp(int value);
+    void SetRank(int value);
+    void SetVisibility(int value);
 
 public:
     PlayerRobot(int health_max, int damage, int heal, int energy_max,
@@ -28,11 +32,6 @@ public:
     int GetExperienceUp() const { return experience_up_; }
     int GetRank() const { return rank_; }
     int GetVisibility() const { return visibility_; }
-
-    void SetExperience(int value);
-    void SetExperienceUp(int value);
-    void SetRank(int value);
-    void SetVisibility(int value);
 
     void AddExperience(int value);
 };

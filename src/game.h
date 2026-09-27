@@ -6,10 +6,12 @@
 #include "factory.h"
 #include "input.h"
 #include "renderer.h"
+#include "level.h" 
 
 class Game {
 private:
     static constexpr int kExperiencePerKill = 50;
+    static constexpr int kInitialEnemiesPerFactory = 3;
 
     Field field_;
     PlayerRobot player_;
@@ -36,17 +38,13 @@ private:
     void ProcessPlayerTurn();
     void ProcessEnemiesTurns();
     void TickFactories();
+    void SpawnInitialEnemies();
     void RestoreEnergy();
     void UpdateVisibility();
     void RemoveDeadEnemies();
 
 public:
-    Game(Field field,
-         PlayerRobot player,
-         std::vector<EnemyRobot> enemies,
-         std::vector<RobotsFactory> factories,
-         Input input,
-         Renderer renderer);
-
+    Game(Level level, Input input, Renderer renderer);
+    
     void Run();
 };
