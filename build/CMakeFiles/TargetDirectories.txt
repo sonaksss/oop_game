@@ -1,3 +1,3 @@
-/home/moevm/game_oop/game/build/CMakeFiles/rebuild_cache.dir
-/home/moevm/game_oop/game/build/CMakeFiles/edit_cache.dir
-/home/moevm/game_oop/game/build/CMakeFiles/game.dir
+/home/moevm/oop_game/build/CMakeFiles/rebuild_cache.dir
+/home/moevm/oop_game/build/CMakeFiles/edit_cache.dir
+/home/moevm/oop_game/build/CMakeFiles/game.dir

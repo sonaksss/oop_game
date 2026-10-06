@@ -14,10 +14,12 @@ private:
 
     void InitColors();
 
-    const Robot* FindRobotAt(Position pos,
-                             const PlayerRobot& player,
-                             const std::vector<EnemyRobot>& enemies) const;
+    const PlayerRobot* FindPlayerAt(Position pos,
+                                    const PlayerRobot& player) const;
 
+    const EnemyRobot* FindEnemyAt(Position pos,
+                                  const std::vector<EnemyRobot>& enemies) const;
+    
     const RobotsFactory* FindFactoryAt(
         Position pos,
         const std::vector<RobotsFactory>& factories) const;

@@ -8,10 +8,13 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.dir/src/level.cpp.o"
   "CMakeFiles/game.dir/src/level_builder.cpp.o"
   "CMakeFiles/game.dir/src/main.cpp.o"
+  "CMakeFiles/game.dir/src/movement_system.cpp.o"
   "CMakeFiles/game.dir/src/player_robot.cpp.o"
   "CMakeFiles/game.dir/src/position.cpp.o"
   "CMakeFiles/game.dir/src/renderer.cpp.o"
   "CMakeFiles/game.dir/src/robot.cpp.o"
+  "CMakeFiles/game.dir/src/spawn_system.cpp.o"
+  "CMakeFiles/game.dir/src/visibility_system.cpp.o"
   "game"
   "game.pdb"
 )

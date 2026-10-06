@@ -12,8 +12,6 @@ public:
 
     int X() const;
     int Y() const;
-
-    void SetPosition(int x, int y);
     int ManhattanDistance(Position other) const;
 
     bool operator==(const Position& other) const;

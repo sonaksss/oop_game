@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/moevm/game_oop/game/src 
+CXX_INCLUDES = -I/home/moevm/oop_game/src 
 

@@ -10,16 +10,8 @@
 int main() {
     std::srand(static_cast<unsigned>(std::time(nullptr)));
 
-    int width = 12;
-    int height = 12;
-
-    std::cout << "Ширина (" << Field::MinWidth() << "-" << Field::MaxWidth() << "): ";
-    std::cin >> width;
-    std::cout << "Высота (" << Field::MinHeight() << "-" << Field::MaxHeight() << "): ";
-    std::cin >> height;
-
     try {
-        LevelBuilder builder(width, height);
+        LevelBuilder builder = LevelBuilder::ReadFromConsole();
         Level level = builder.Build();
 
         Input input;

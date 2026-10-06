@@ -6,13 +6,13 @@
 #include "factory.h"
 #include "input.h"
 #include "renderer.h"
-#include "level.h" 
+#include "level.h"
+#include "movement_system.h"
+#include "spawn_system.h"
+#include "visibility_system.h"
 
 class Game {
 private:
-    static constexpr int kExperiencePerKill = 50;
-    static constexpr int kInitialEnemiesPerFactory = 3;
-
     Field field_;
     PlayerRobot player_;
     std::vector<EnemyRobot> enemies_;
@@ -20,31 +20,21 @@ private:
     Input input_;
     Renderer renderer_;
 
+    MovementSystem movement_;
+    SpawnSystem spawner_;
+    VisibilitySystem visibility_;
+
     bool is_running_ = true;
 
     bool AreEnemiesAlive() const;
-    bool AreAllFactoriesDead() const;
     bool IsVictory() const;
 
-    Robot* FindRobotAt(Position pos, const Robot* excluded);
-    RobotsFactory* FindFactoryAt(Position pos);
-
-    bool TryAttackFactory(Robot& robot, Position target);
-    void HandleInteraction(Robot& robot, Robot& other);
-
-    bool TryMove(Robot& robot, Position delta);
-    bool TryMoveByPath(Robot& robot, Position delta);
-
-    void ProcessPlayerTurn();
+    bool ProcessPlayerTurn();
     void ProcessEnemiesTurns();
-    void TickFactories();
-    void SpawnInitialEnemies();
-    void RestoreEnergy();
-    void UpdateVisibility();
-    void RemoveDeadEnemies();
+    void EndOfTurn();
 
 public:
     Game(Level level, Input input, Renderer renderer);
-    
+
     void Run();
 };

@@ -52,9 +52,12 @@ void Renderer::Draw(const Field& field,
             int color = CP_UNKNOWN;
 
             if (field.IsCellKnown(p)) {
-                if (const Robot* r = FindRobotAt(p, player, enemies)) {
-                    symbol = r->IsEnemy() ? 'E' : 'P';
-                    color  = r->IsEnemy() ? CP_ENEMY : CP_PLAYER;
+                if (FindPlayerAt(p, player)) {
+                    symbol = 'P';
+                    color  = CP_PLAYER;
+                } else if (FindEnemyAt(p, enemies)) {
+                    symbol = 'E';
+                    color  = CP_ENEMY;
                 } else if (FindFactoryAt(p, factories)) {
                     symbol = 'F';
                     color  = CP_FACTORY;
@@ -134,11 +137,13 @@ void Renderer::DrawGameOver(const std::string& message) const {
     getch();
 }
 
-const Robot* Renderer::FindRobotAt(Position pos,
-                                   const PlayerRobot& player,
-                                   const std::vector<EnemyRobot>& enemies) const {
+const PlayerRobot* Renderer::FindPlayerAt(Position pos, const PlayerRobot& player) const {
     if (player.IsAlive() && player.GetPosition() == pos)
         return &player;
+    return nullptr;
+}
+
+const EnemyRobot* Renderer::FindEnemyAt(Position pos, const std::vector<EnemyRobot>& enemies) const {
     for (const EnemyRobot& e : enemies)
         if (e.IsAlive() && e.GetPosition() == pos)
             return &e;
@@ -150,8 +155,7 @@ const RobotsFactory* Renderer::FindFactoryAt(
         const std::vector<RobotsFactory>& factories) const {
     for (const RobotsFactory& f : factories) {
         if (!f.IsAlive()) continue;
-        for (const Position& c : f.GetOccupiedCells())
-            if (c == pos) return &f;
+        if (f.Occupies(pos)) return &f;
     }
     return nullptr;
 }

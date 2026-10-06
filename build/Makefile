@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/moevm/game_oop/game
+CMAKE_SOURCE_DIR = /home/moevm/oop_game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/moevm/game_oop/game/build
+CMAKE_BINARY_DIR = /home/moevm/oop_game/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/moevm/game_oop/game/build/CMakeFiles /home/moevm/game_oop/game/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moevm/oop_game/build/CMakeFiles /home/moevm/oop_game/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/moevm/game_oop/game/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moevm/oop_game/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -366,6 +366,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/movement_system.o: src/movement_system.cpp.o
+
+.PHONY : src/movement_system.o
+
+# target to build an object file
+src/movement_system.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/movement_system.cpp.o
+.PHONY : src/movement_system.cpp.o
+
+src/movement_system.i: src/movement_system.cpp.i
+
+.PHONY : src/movement_system.i
+
+# target to preprocess a source file
+src/movement_system.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/movement_system.cpp.i
+.PHONY : src/movement_system.cpp.i
+
+src/movement_system.s: src/movement_system.cpp.s
+
+.PHONY : src/movement_system.s
+
+# target to generate assembly for a file
+src/movement_system.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/movement_system.cpp.s
+.PHONY : src/movement_system.cpp.s
+
 src/player_robot.o: src/player_robot.cpp.o
 
 .PHONY : src/player_robot.o
@@ -474,6 +501,60 @@ src/robot.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/robot.cpp.s
 .PHONY : src/robot.cpp.s
 
+src/spawn_system.o: src/spawn_system.cpp.o
+
+.PHONY : src/spawn_system.o
+
+# target to build an object file
+src/spawn_system.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/spawn_system.cpp.o
+.PHONY : src/spawn_system.cpp.o
+
+src/spawn_system.i: src/spawn_system.cpp.i
+
+.PHONY : src/spawn_system.i
+
+# target to preprocess a source file
+src/spawn_system.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/spawn_system.cpp.i
+.PHONY : src/spawn_system.cpp.i
+
+src/spawn_system.s: src/spawn_system.cpp.s
+
+.PHONY : src/spawn_system.s
+
+# target to generate assembly for a file
+src/spawn_system.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/spawn_system.cpp.s
+.PHONY : src/spawn_system.cpp.s
+
+src/visibility_system.o: src/visibility_system.cpp.o
+
+.PHONY : src/visibility_system.o
+
+# target to build an object file
+src/visibility_system.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/visibility_system.cpp.o
+.PHONY : src/visibility_system.cpp.o
+
+src/visibility_system.i: src/visibility_system.cpp.i
+
+.PHONY : src/visibility_system.i
+
+# target to preprocess a source file
+src/visibility_system.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/visibility_system.cpp.i
+.PHONY : src/visibility_system.cpp.i
+
+src/visibility_system.s: src/visibility_system.cpp.s
+
+.PHONY : src/visibility_system.s
+
+# target to generate assembly for a file
+src/visibility_system.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/visibility_system.cpp.s
+.PHONY : src/visibility_system.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -510,6 +591,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/movement_system.o"
+	@echo "... src/movement_system.i"
+	@echo "... src/movement_system.s"
 	@echo "... src/player_robot.o"
 	@echo "... src/player_robot.i"
 	@echo "... src/player_robot.s"
@@ -522,6 +606,12 @@ help:
 	@echo "... src/robot.o"
 	@echo "... src/robot.i"
 	@echo "... src/robot.s"
+	@echo "... src/spawn_system.o"
+	@echo "... src/spawn_system.i"
+	@echo "... src/spawn_system.s"
+	@echo "... src/visibility_system.o"
+	@echo "... src/visibility_system.i"
+	@echo "... src/visibility_system.s"
 .PHONY : help
 
 

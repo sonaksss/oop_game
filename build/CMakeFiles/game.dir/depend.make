@@ -28,10 +28,13 @@ CMakeFiles/game.dir/src/game.cpp.o: ../src/game.cpp
 CMakeFiles/game.dir/src/game.cpp.o: ../src/game.h
 CMakeFiles/game.dir/src/game.cpp.o: ../src/input.h
 CMakeFiles/game.dir/src/game.cpp.o: ../src/level.h
+CMakeFiles/game.dir/src/game.cpp.o: ../src/movement_system.h
 CMakeFiles/game.dir/src/game.cpp.o: ../src/player_robot.h
 CMakeFiles/game.dir/src/game.cpp.o: ../src/position.h
 CMakeFiles/game.dir/src/game.cpp.o: ../src/renderer.h
 CMakeFiles/game.dir/src/game.cpp.o: ../src/robot.h
+CMakeFiles/game.dir/src/game.cpp.o: ../src/spawn_system.h
+CMakeFiles/game.dir/src/game.cpp.o: ../src/visibility_system.h
 
 CMakeFiles/game.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/game.dir/src/input.cpp.o: ../src/input.h
@@ -67,10 +70,23 @@ CMakeFiles/game.dir/src/main.cpp.o: ../src/input.h
 CMakeFiles/game.dir/src/main.cpp.o: ../src/level.h
 CMakeFiles/game.dir/src/main.cpp.o: ../src/level_builder.h
 CMakeFiles/game.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/game.dir/src/main.cpp.o: ../src/movement_system.h
 CMakeFiles/game.dir/src/main.cpp.o: ../src/player_robot.h
 CMakeFiles/game.dir/src/main.cpp.o: ../src/position.h
 CMakeFiles/game.dir/src/main.cpp.o: ../src/renderer.h
 CMakeFiles/game.dir/src/main.cpp.o: ../src/robot.h
+CMakeFiles/game.dir/src/main.cpp.o: ../src/spawn_system.h
+CMakeFiles/game.dir/src/main.cpp.o: ../src/visibility_system.h
+
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/cell.h
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/enemy_robot.h
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/factory.h
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/field.h
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/movement_system.cpp
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/movement_system.h
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/player_robot.h
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/position.h
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/robot.h
 
 CMakeFiles/game.dir/src/player_robot.cpp.o: ../src/player_robot.cpp
 CMakeFiles/game.dir/src/player_robot.cpp.o: ../src/player_robot.h
@@ -93,4 +109,22 @@ CMakeFiles/game.dir/src/renderer.cpp.o: ../src/robot.h
 CMakeFiles/game.dir/src/robot.cpp.o: ../src/position.h
 CMakeFiles/game.dir/src/robot.cpp.o: ../src/robot.cpp
 CMakeFiles/game.dir/src/robot.cpp.o: ../src/robot.h
+
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/cell.h
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/enemy_robot.h
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/factory.h
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/field.h
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/player_robot.h
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/position.h
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/robot.h
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/spawn_system.cpp
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/spawn_system.h
+
+CMakeFiles/game.dir/src/visibility_system.cpp.o: ../src/cell.h
+CMakeFiles/game.dir/src/visibility_system.cpp.o: ../src/field.h
+CMakeFiles/game.dir/src/visibility_system.cpp.o: ../src/player_robot.h
+CMakeFiles/game.dir/src/visibility_system.cpp.o: ../src/position.h
+CMakeFiles/game.dir/src/visibility_system.cpp.o: ../src/robot.h
+CMakeFiles/game.dir/src/visibility_system.cpp.o: ../src/visibility_system.cpp
+CMakeFiles/game.dir/src/visibility_system.cpp.o: ../src/visibility_system.h
 

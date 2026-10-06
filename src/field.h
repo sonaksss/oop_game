@@ -8,14 +8,13 @@ private:
     static constexpr int kWidthMin = 5;
     static constexpr int kWidthMax = 100;
     static constexpr int kHeightMin = 5;
-    static constexpr int kHeightMax = 50;
+    static constexpr int kHeightMax = 40;
 
     int width_;
     int height_;
     std::vector<std::vector<Cell>> grid_;
 
     bool IsForbidden(Position p, const std::vector<Position>& forbidden) const;
-
 public:
     explicit Field(int width, int height);
 

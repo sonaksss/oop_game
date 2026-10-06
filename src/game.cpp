@@ -2,9 +2,13 @@
 #include <algorithm>
 #include <cstdlib>
 
-Game::Game(Level level, Input input, Renderer renderer): field_(level.TakeField()),
-      player_(level.TakePlayer()), enemies_(level.TakeEnemies()),
-      factories_(level.TakeFactories()), input_(input), renderer_(renderer) {}
+Game::Game(Level level, Input input, Renderer renderer)
+    : field_(level.TakeField()),
+      player_(level.TakePlayer()),
+      enemies_(level.TakeEnemies()),
+      factories_(level.TakeFactories()),
+      input_(input),
+      renderer_(renderer) {}
 
 bool Game::AreEnemiesAlive() const {
     for (const EnemyRobot& e : enemies_)
@@ -12,250 +16,86 @@ bool Game::AreEnemiesAlive() const {
     return false;
 }
 
-bool Game::AreAllFactoriesDead() const {
-    for (const RobotsFactory& f : factories_)
-        if (f.IsAlive()) return false;
-    return true;
-}
-
 bool Game::IsVictory() const {
-    return !AreEnemiesAlive() && AreAllFactoriesDead();
+    return !AreEnemiesAlive();
 }
 
-Robot* Game::FindRobotAt(Position pos, const Robot* excluded) {
-    if (&player_ != excluded && player_.IsAlive() &&
-        player_.GetPosition() == pos)
-        return &player_;
-
-    for (EnemyRobot& e : enemies_) {
-        if (&e != excluded && e.IsAlive() && e.GetPosition() == pos)
-            return &e;
-    }
-    return nullptr;
-}
-
-RobotsFactory* Game::FindFactoryAt(Position pos) {
-    for (RobotsFactory& f : factories_) {
-        if (!f.IsAlive()) continue;
-        for (const Position& c : f.GetOccupiedCells())
-            if (c == pos) return &f;
-    }
-    return nullptr;
-}
-
-bool Game::TryAttackFactory(Robot& robot, Position target) {
-    RobotsFactory* factory = FindFactoryAt(target);
-    if (!factory) return false;
-
-    if (robot.IsEnemy()) return true;
-
-    factory->TakeDamage(robot.GetDamage());
-    return true;
-}
-
-void Game::HandleInteraction(Robot& robot, Robot& other) {
-    bool was_alive = other.IsAlive();
-    bool was_enemy = (robot.IsEnemy() != other.IsEnemy());
-
-    robot.Interact(other);
-
-    if (was_alive && was_enemy && !other.IsAlive()) {
-        if (!robot.IsEnemy())
-            player_.AddExperience(kExperiencePerKill);
-    }
-}
-
-bool Game::TryMove(Robot& robot, Position delta) {
-    Position target{robot.GetPosition().X() + delta.X(),
-                    robot.GetPosition().Y() + delta.Y()};
-
-    if (TryAttackFactory(robot, target))
-        return true;
-
-    if (!field_.IsAvailableCell(target))
-        return false;
-
-    if (Robot* other = FindRobotAt(target, &robot)) {
-        HandleInteraction(robot, *other);
-        return true;
-    }
-
-    robot.SetPosition(target);
-    return true;
-}
-
-bool Game::TryMoveByPath(Robot& robot, Position delta) {
-    Position step{0, 0};
-    if (delta.X() > 0) step = {1, 0};
-    else if (delta.X() < 0) step = {-1, 0};
-    else if (delta.Y() > 0) step = {0, 1};
-    else if (delta.Y() < 0) step = {0, -1};
-    else return false;
-
-    int remaining = robot.GetSpeed();
-    bool moved = false;
-
-    while (remaining > 0) {
-        Position current = robot.GetPosition();
-        Position target{current.X() + step.X(), current.Y() + step.Y()};
-
-        if (TryAttackFactory(robot, target))
-            break;
-
-        if (!field_.IsAvailableCell(target))
-            break;
-
-        if (Robot* other = FindRobotAt(target, &robot)) {
-            HandleInteraction(robot, *other);
-            break;
-        }
-
-        int passability = field_.GetCellPassability(target);
-        if (passability > remaining)
-            break;
-
-        robot.SetPosition(target);
-        remaining -= passability;
-        moved = true;
-    }
-
-    return moved;
-}
-
-void Game::ProcessPlayerTurn() {
+bool Game::ProcessPlayerTurn() {
     Position delta = input_.ReadMove();
+
     if (input_.WantsQuit()) {
         is_running_ = false;
-        return;
+        return false;
     }
     if (delta.X() == 0 && delta.Y() == 0)
-        return;
+        return false;
 
-    TryMoveByPath(player_, delta);
+    return movement_.TryMoveByPath(player_, delta,
+                                   field_, player_,
+                                   enemies_, factories_);
 }
 
 void Game::ProcessEnemiesTurns() {
-    const Position kDirs[4] = {{1,0}, {-1,0}, {0,1}, {0,-1}};
-
+    const Position kDirs[4] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
     for (EnemyRobot& e : enemies_) {
         if (!e.IsAlive()) continue;
         Position dir = kDirs[std::rand() % 4];
-        TryMove(e, dir);
+        movement_.TryMoveByPath(e, dir, field_, player_, enemies_, factories_);
     }
 }
 
-void Game::TickFactories() {
-    const Position kNeighbours[8] = {
-        {-1,-1}, {0,-1}, {1,-1},
-        {-1, 0},          {1, 0},
-        {-1, 1}, {0, 1}, {1, 1}
-    };
-
-    for (RobotsFactory& f : factories_) {
-        if (!f.Tick()) continue;
-
-        Position top_left = f.GetTopLeft();
-        bool spawned = false;
-        for (const Position& d : kNeighbours) {
-            for (int dy = 0; dy < f.GetAreaHeight() && !spawned; ++dy) {
-                for (int dx = 0; dx < f.GetAreaWidth() && !spawned; ++dx) {
-                    Position candidate{top_left.X() + dx + d.X(), top_left.Y() + dy + d.Y()};
-
-                    if (!field_.IsAvailableCell(candidate)) continue;
-                    if (FindRobotAt(candidate, nullptr)) continue;
-
-                    enemies_.push_back(f.Spawn(candidate));
-                    spawned = true;
-                }
-            }
-            if (spawned) break;
-        }
-    }
-}
-
-void Game::SpawnInitialEnemies() {
-    const Position kNeighbours[8] = { {-1,-1}, {0,-1}, {1,-1}, {-1, 0}, {1, 0}, {-1, 1}, {0, 1}, {1, 1}};
-
-    for (RobotsFactory& f : factories_) {
-        int spawned = 0;
-
-        for (const Position& d : kNeighbours) {
-            if (spawned >= kInitialEnemiesPerFactory) break;
-            for (int dy = 0; dy < f.GetAreaHeight() && spawned < kInitialEnemiesPerFactory; ++dy) {
-                for (int dx = 0; dx < f.GetAreaWidth() && spawned < kInitialEnemiesPerFactory; ++dx) {
-                    Position candidate{f.GetTopLeft().X() + dx + d.X(),
-                                       f.GetTopLeft().Y() + dy + d.Y()};
-
-                    if (!field_.IsAvailableCell(candidate)) continue;
-                    if (FindRobotAt(candidate, nullptr)) continue;
-
-                    enemies_.push_back(f.Spawn(candidate));
-                    ++spawned;
-                }
-            }
-        }
-    }
-}
-
-void Game::RestoreEnergy() {
+void Game::EndOfTurn() {
     player_.ChangeEnergy(1);
     for (EnemyRobot& e : enemies_)
         if (e.IsAlive())
             e.ChangeEnergy(1);
-}
 
-void Game::UpdateVisibility() {
-    int radius = player_.GetVisibility();
-    Position center = player_.GetPosition();
-
-    for (int y = 0; y < field_.GetHeight(); ++y) {
-        for (int x = 0; x < field_.GetWidth(); ++x) {
-            Position p{x, y};
-            if (field_.IsCellKnown(p) && !field_.IsAvailableCell(p))
-                continue;
+    if (AreEnemiesAlive()) {
+        for (RobotsFactory& f : factories_)
+            spawner_.Tick(f, field_, player_, enemies_);
+    }
+    for (RobotsFactory& f : factories_) {
+        if (f.IsAlive() || f.WasReleased()) continue;
+        for (const Position& p : f.GetOccupiedCells()) {
+            field_.SetCellAvailability(p, true);
             field_.SetCellKnown(p, false);
         }
+        f.MarkReleased();
     }
 
-    for (int y = 0; y < field_.GetHeight(); ++y) {
-        for (int x = 0; x < field_.GetWidth(); ++x) {
-            Position p{x, y};
-            if (p.ManhattanDistance(center) <= radius)
-                field_.SetCellKnown(p, true);
-        }
-    }
-}
-
-void Game::RemoveDeadEnemies() {
     enemies_.erase(
         std::remove_if(enemies_.begin(), enemies_.end(),
                        [](const EnemyRobot& e) { return !e.IsAlive(); }),
         enemies_.end());
+
+    visibility_.Update(field_, player_);
 }
 
 void Game::Run() {
     input_.Reset();
-    UpdateVisibility();
-    SpawnInitialEnemies();
-    UpdateVisibility();
+    visibility_.Update(field_, player_);
+
+    for (RobotsFactory& f : factories_)
+        spawner_.SpawnInitial(f, field_, player_, enemies_);
+
+    renderer_.Draw(field_, player_, enemies_, factories_);
 
     while (is_running_ && player_.IsAlive() && !IsVictory()) {
-        renderer_.Draw(field_, player_, enemies_, factories_);
-
-        ProcessPlayerTurn();
-        if (!is_running_) break;
+        if (!ProcessPlayerTurn()) {
+            if (!is_running_) break;
+            continue;
+        }
 
         ProcessEnemiesTurns();
-        RemoveDeadEnemies();
-        TickFactories();
-        RestoreEnergy();
-        UpdateVisibility();
+        EndOfTurn();
+
+        renderer_.Draw(field_, player_, enemies_, factories_);
     }
 
     if (!player_.IsAlive())
         renderer_.DrawGameOver("Поражение.");
     else if (IsVictory())
-        renderer_.DrawGameOver("Artem2007penis");
+        renderer_.DrawGameOver("Победа!");
     else
         renderer_.DrawGameOver("Выход из игры.");
 }

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/moevm/game_oop/game
+CMAKE_SOURCE_DIR = /home/moevm/oop_game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/moevm/game_oop/game/build
+CMAKE_BINARY_DIR = /home/moevm/oop_game/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/game.dir/depend.make
@@ -59,172 +59,211 @@ include CMakeFiles/game.dir/flags.make
 
 CMakeFiles/game.dir/src/cell.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/cell.cpp.o: ../src/cell.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/game.dir/src/cell.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/cell.cpp.o -c /home/moevm/game_oop/game/src/cell.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/game.dir/src/cell.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/cell.cpp.o -c /home/moevm/oop_game/src/cell.cpp
 
 CMakeFiles/game.dir/src/cell.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/cell.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/cell.cpp > CMakeFiles/game.dir/src/cell.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/cell.cpp > CMakeFiles/game.dir/src/cell.cpp.i
 
 CMakeFiles/game.dir/src/cell.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/cell.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/cell.cpp -o CMakeFiles/game.dir/src/cell.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/cell.cpp -o CMakeFiles/game.dir/src/cell.cpp.s
 
 CMakeFiles/game.dir/src/enemy_robot.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/enemy_robot.cpp.o: ../src/enemy_robot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/game.dir/src/enemy_robot.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/enemy_robot.cpp.o -c /home/moevm/game_oop/game/src/enemy_robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/game.dir/src/enemy_robot.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/enemy_robot.cpp.o -c /home/moevm/oop_game/src/enemy_robot.cpp
 
 CMakeFiles/game.dir/src/enemy_robot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/enemy_robot.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/enemy_robot.cpp > CMakeFiles/game.dir/src/enemy_robot.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/enemy_robot.cpp > CMakeFiles/game.dir/src/enemy_robot.cpp.i
 
 CMakeFiles/game.dir/src/enemy_robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/enemy_robot.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/enemy_robot.cpp -o CMakeFiles/game.dir/src/enemy_robot.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/enemy_robot.cpp -o CMakeFiles/game.dir/src/enemy_robot.cpp.s
 
 CMakeFiles/game.dir/src/factory.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/factory.cpp.o: ../src/factory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/game.dir/src/factory.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/factory.cpp.o -c /home/moevm/game_oop/game/src/factory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/game.dir/src/factory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/factory.cpp.o -c /home/moevm/oop_game/src/factory.cpp
 
 CMakeFiles/game.dir/src/factory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/factory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/factory.cpp > CMakeFiles/game.dir/src/factory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/factory.cpp > CMakeFiles/game.dir/src/factory.cpp.i
 
 CMakeFiles/game.dir/src/factory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/factory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/factory.cpp -o CMakeFiles/game.dir/src/factory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/factory.cpp -o CMakeFiles/game.dir/src/factory.cpp.s
 
 CMakeFiles/game.dir/src/field.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/field.cpp.o: ../src/field.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game.dir/src/field.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/field.cpp.o -c /home/moevm/game_oop/game/src/field.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game.dir/src/field.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/field.cpp.o -c /home/moevm/oop_game/src/field.cpp
 
 CMakeFiles/game.dir/src/field.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/field.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/field.cpp > CMakeFiles/game.dir/src/field.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/field.cpp > CMakeFiles/game.dir/src/field.cpp.i
 
 CMakeFiles/game.dir/src/field.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/field.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/field.cpp -o CMakeFiles/game.dir/src/field.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/field.cpp -o CMakeFiles/game.dir/src/field.cpp.s
 
 CMakeFiles/game.dir/src/game.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/game.cpp.o: ../src/game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /home/moevm/game_oop/game/src/game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /home/moevm/oop_game/src/game.cpp
 
 CMakeFiles/game.dir/src/game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/game.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/game.cpp > CMakeFiles/game.dir/src/game.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/game.cpp > CMakeFiles/game.dir/src/game.cpp.i
 
 CMakeFiles/game.dir/src/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/game.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/game.cpp -o CMakeFiles/game.dir/src/game.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/game.cpp -o CMakeFiles/game.dir/src/game.cpp.s
 
 CMakeFiles/game.dir/src/input.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/input.cpp.o: ../src/input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.dir/src/input.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/input.cpp.o -c /home/moevm/game_oop/game/src/input.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.dir/src/input.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/input.cpp.o -c /home/moevm/oop_game/src/input.cpp
 
 CMakeFiles/game.dir/src/input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/input.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/input.cpp > CMakeFiles/game.dir/src/input.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/input.cpp > CMakeFiles/game.dir/src/input.cpp.i
 
 CMakeFiles/game.dir/src/input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/input.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/input.cpp -o CMakeFiles/game.dir/src/input.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/input.cpp -o CMakeFiles/game.dir/src/input.cpp.s
 
 CMakeFiles/game.dir/src/level.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/level.cpp.o: ../src/level.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.dir/src/level.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/level.cpp.o -c /home/moevm/game_oop/game/src/level.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.dir/src/level.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/level.cpp.o -c /home/moevm/oop_game/src/level.cpp
 
 CMakeFiles/game.dir/src/level.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/level.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/level.cpp > CMakeFiles/game.dir/src/level.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/level.cpp > CMakeFiles/game.dir/src/level.cpp.i
 
 CMakeFiles/game.dir/src/level.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/level.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/level.cpp -o CMakeFiles/game.dir/src/level.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/level.cpp -o CMakeFiles/game.dir/src/level.cpp.s
 
 CMakeFiles/game.dir/src/level_builder.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/level_builder.cpp.o: ../src/level_builder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/game.dir/src/level_builder.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/level_builder.cpp.o -c /home/moevm/game_oop/game/src/level_builder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/game.dir/src/level_builder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/level_builder.cpp.o -c /home/moevm/oop_game/src/level_builder.cpp
 
 CMakeFiles/game.dir/src/level_builder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/level_builder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/level_builder.cpp > CMakeFiles/game.dir/src/level_builder.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/level_builder.cpp > CMakeFiles/game.dir/src/level_builder.cpp.i
 
 CMakeFiles/game.dir/src/level_builder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/level_builder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/level_builder.cpp -o CMakeFiles/game.dir/src/level_builder.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/level_builder.cpp -o CMakeFiles/game.dir/src/level_builder.cpp.s
 
 CMakeFiles/game.dir/src/main.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/game.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/main.cpp.o -c /home/moevm/game_oop/game/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/game.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/main.cpp.o -c /home/moevm/oop_game/src/main.cpp
 
 CMakeFiles/game.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/main.cpp > CMakeFiles/game.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/main.cpp > CMakeFiles/game.dir/src/main.cpp.i
 
 CMakeFiles/game.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/main.cpp -o CMakeFiles/game.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/main.cpp -o CMakeFiles/game.dir/src/main.cpp.s
+
+CMakeFiles/game.dir/src/movement_system.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/movement_system.cpp.o: ../src/movement_system.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/game.dir/src/movement_system.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/movement_system.cpp.o -c /home/moevm/oop_game/src/movement_system.cpp
+
+CMakeFiles/game.dir/src/movement_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/movement_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/movement_system.cpp > CMakeFiles/game.dir/src/movement_system.cpp.i
+
+CMakeFiles/game.dir/src/movement_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/movement_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/movement_system.cpp -o CMakeFiles/game.dir/src/movement_system.cpp.s
 
 CMakeFiles/game.dir/src/player_robot.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/player_robot.cpp.o: ../src/player_robot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/game.dir/src/player_robot.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/player_robot.cpp.o -c /home/moevm/game_oop/game/src/player_robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/game.dir/src/player_robot.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/player_robot.cpp.o -c /home/moevm/oop_game/src/player_robot.cpp
 
 CMakeFiles/game.dir/src/player_robot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/player_robot.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/player_robot.cpp > CMakeFiles/game.dir/src/player_robot.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/player_robot.cpp > CMakeFiles/game.dir/src/player_robot.cpp.i
 
 CMakeFiles/game.dir/src/player_robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/player_robot.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/player_robot.cpp -o CMakeFiles/game.dir/src/player_robot.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/player_robot.cpp -o CMakeFiles/game.dir/src/player_robot.cpp.s
 
 CMakeFiles/game.dir/src/position.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/position.cpp.o: ../src/position.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/game.dir/src/position.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/position.cpp.o -c /home/moevm/game_oop/game/src/position.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/game.dir/src/position.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/position.cpp.o -c /home/moevm/oop_game/src/position.cpp
 
 CMakeFiles/game.dir/src/position.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/position.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/position.cpp > CMakeFiles/game.dir/src/position.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/position.cpp > CMakeFiles/game.dir/src/position.cpp.i
 
 CMakeFiles/game.dir/src/position.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/position.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/position.cpp -o CMakeFiles/game.dir/src/position.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/position.cpp -o CMakeFiles/game.dir/src/position.cpp.s
 
 CMakeFiles/game.dir/src/renderer.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/renderer.cpp.o: ../src/renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/game.dir/src/renderer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/renderer.cpp.o -c /home/moevm/game_oop/game/src/renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/game.dir/src/renderer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/renderer.cpp.o -c /home/moevm/oop_game/src/renderer.cpp
 
 CMakeFiles/game.dir/src/renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/renderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/renderer.cpp > CMakeFiles/game.dir/src/renderer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/renderer.cpp > CMakeFiles/game.dir/src/renderer.cpp.i
 
 CMakeFiles/game.dir/src/renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/renderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/renderer.cpp -o CMakeFiles/game.dir/src/renderer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/renderer.cpp -o CMakeFiles/game.dir/src/renderer.cpp.s
 
 CMakeFiles/game.dir/src/robot.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/robot.cpp.o: ../src/robot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/game.dir/src/robot.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/robot.cpp.o -c /home/moevm/game_oop/game/src/robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/game.dir/src/robot.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/robot.cpp.o -c /home/moevm/oop_game/src/robot.cpp
 
 CMakeFiles/game.dir/src/robot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/robot.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/game_oop/game/src/robot.cpp > CMakeFiles/game.dir/src/robot.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/robot.cpp > CMakeFiles/game.dir/src/robot.cpp.i
 
 CMakeFiles/game.dir/src/robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/robot.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/game_oop/game/src/robot.cpp -o CMakeFiles/game.dir/src/robot.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/robot.cpp -o CMakeFiles/game.dir/src/robot.cpp.s
+
+CMakeFiles/game.dir/src/spawn_system.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/spawn_system.cpp.o: ../src/spawn_system.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/game.dir/src/spawn_system.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/spawn_system.cpp.o -c /home/moevm/oop_game/src/spawn_system.cpp
+
+CMakeFiles/game.dir/src/spawn_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/spawn_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/spawn_system.cpp > CMakeFiles/game.dir/src/spawn_system.cpp.i
+
+CMakeFiles/game.dir/src/spawn_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/spawn_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/spawn_system.cpp -o CMakeFiles/game.dir/src/spawn_system.cpp.s
+
+CMakeFiles/game.dir/src/visibility_system.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/visibility_system.cpp.o: ../src/visibility_system.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/game.dir/src/visibility_system.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/visibility_system.cpp.o -c /home/moevm/oop_game/src/visibility_system.cpp
+
+CMakeFiles/game.dir/src/visibility_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/visibility_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moevm/oop_game/src/visibility_system.cpp > CMakeFiles/game.dir/src/visibility_system.cpp.i
+
+CMakeFiles/game.dir/src/visibility_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/visibility_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moevm/oop_game/src/visibility_system.cpp -o CMakeFiles/game.dir/src/visibility_system.cpp.s
 
 # Object files for target game
 game_OBJECTS = \
@@ -237,10 +276,13 @@ game_OBJECTS = \
 "CMakeFiles/game.dir/src/level.cpp.o" \
 "CMakeFiles/game.dir/src/level_builder.cpp.o" \
 "CMakeFiles/game.dir/src/main.cpp.o" \
+"CMakeFiles/game.dir/src/movement_system.cpp.o" \
 "CMakeFiles/game.dir/src/player_robot.cpp.o" \
 "CMakeFiles/game.dir/src/position.cpp.o" \
 "CMakeFiles/game.dir/src/renderer.cpp.o" \
-"CMakeFiles/game.dir/src/robot.cpp.o"
+"CMakeFiles/game.dir/src/robot.cpp.o" \
+"CMakeFiles/game.dir/src/spawn_system.cpp.o" \
+"CMakeFiles/game.dir/src/visibility_system.cpp.o"
 
 # External object files for target game
 game_EXTERNAL_OBJECTS =
@@ -254,14 +296,17 @@ game: CMakeFiles/game.dir/src/input.cpp.o
 game: CMakeFiles/game.dir/src/level.cpp.o
 game: CMakeFiles/game.dir/src/level_builder.cpp.o
 game: CMakeFiles/game.dir/src/main.cpp.o
+game: CMakeFiles/game.dir/src/movement_system.cpp.o
 game: CMakeFiles/game.dir/src/player_robot.cpp.o
 game: CMakeFiles/game.dir/src/position.cpp.o
 game: CMakeFiles/game.dir/src/renderer.cpp.o
 game: CMakeFiles/game.dir/src/robot.cpp.o
+game: CMakeFiles/game.dir/src/spawn_system.cpp.o
+game: CMakeFiles/game.dir/src/visibility_system.cpp.o
 game: CMakeFiles/game.dir/build.make
 game: /usr/lib/x86_64-linux-gnu/libncursesw.so
 game: CMakeFiles/game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/moevm/game_oop/game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/moevm/oop_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -274,6 +319,6 @@ CMakeFiles/game.dir/clean:
 .PHONY : CMakeFiles/game.dir/clean
 
 CMakeFiles/game.dir/depend:
-	cd /home/moevm/game_oop/game/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/moevm/game_oop/game /home/moevm/game_oop/game /home/moevm/game_oop/game/build /home/moevm/game_oop/game/build /home/moevm/game_oop/game/build/CMakeFiles/game.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/moevm/oop_game/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/moevm/oop_game /home/moevm/oop_game /home/moevm/oop_game/build /home/moevm/oop_game/build /home/moevm/oop_game/build/CMakeFiles/game.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/game.dir/depend
 
